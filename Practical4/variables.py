@@ -19,6 +19,7 @@ elif f == c:
 X == True 
 Y == Flase
 W ==X and Y
+print("W:",W)
 
 #truth table
 #  X | Y | W
