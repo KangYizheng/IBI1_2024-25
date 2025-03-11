@@ -8,22 +8,22 @@ d=5 #the time walk to the car
 e=90 #the time of driving
 f=d+e #the total of time
 if f >= c:
-   print("#driving is longer")
+   print("#driving is longer,bus is quicker")
 elif  f <= c:
-   print("#bus is longer")
+   print("#bus is longer, driving is quicker")
 elif f == c:
    print("#driving is equal to bus")
    # bus is quicker
 
 
-X == True 
-Y == Flase
-W ==X and Y
+X = True 
+Y = False
+W =X and Y
 print("W:",W)
 
 #truth table
-#  X | Y | W
-#  T | T | T
-#  T | F | F
-#  F | F | F
-#  F | T | F
+#  X     | Y     | W
+#  True  | True  | True
+#  True  | False | False
+#  False | False | False
+#  False | True  | False
