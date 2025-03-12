@@ -11,7 +11,7 @@ if f >= c:
    print("#driving is longer,bus is quicker")
 elif  f <= c:
    print("#bus is longer, driving is quicker")
-elif f == c:
+else: 
    print("#driving is equal to bus")
    # bus is quicker
 
