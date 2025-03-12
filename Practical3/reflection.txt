@@ -1,0 +1,2 @@
+After this class, I have a preliminary understanding of the programming world, 
+learned how to clone, change the file locally and upload it to the cloud
