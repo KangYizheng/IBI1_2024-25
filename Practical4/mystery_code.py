@@ -1,9 +1,10 @@
 # What does this piece of code do?
-# Answer:I think this is used to measure probability, or to simulate probability tests, because a large number of numbers are generated
+# Answer:this could be measuring two rolls of the dice to the same frequency.I think this is used to measure probability, or to simulate probability tests, because a large number of numbers are generated
 # and then tend to a probability, and you can observe the probability of this
 # Import libraries
 # randint allows drawing a random number,
 # e.g. randint(1,5) draws a number between 1 and 5
+
 from random import randint
 
 # ceil takes the ceiling of a number, i.e. the next higher integer.
