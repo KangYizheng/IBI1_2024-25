@@ -1,4 +1,4 @@
-from re import X
+
 
 
 a=15 #The time of walk to the	bus	stop
@@ -11,7 +11,7 @@ if f >= c:
    print("#driving is longer,bus is quicker")
 elif  f <= c:
    print("#bus is longer, driving is quicker")
-else: 
+else:
    print("#driving is equal to bus")
    # bus is quicker
 
