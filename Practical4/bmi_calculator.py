@@ -1,4 +1,4 @@
-Weight=float(input("#the weight of person the weight is in kg")) 
+Weight=float(input("the weight of person the weight is in kg")) 
 Height=float(input("the height of person  in m"))
 BMI= Weight/(Height**2)
 if BMI > 30: #BMI is a measure of body fat based on height and weight that
