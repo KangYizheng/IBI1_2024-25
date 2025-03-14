@@ -7,9 +7,9 @@ c=a+b #the total of time of bus
 d=5 #the time walk to the car
 e=90 #the time of driving
 f=d+e #the total of time
-if f >= c:
+if f > c:
    print("#driving is longer,bus is quicker")
-elif  f <= c:
+elif  f < c:
    print("#bus is longer, driving is quicker")
 else:
    print("#driving is equal to bus")
