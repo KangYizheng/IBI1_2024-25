@@ -1,5 +1,5 @@
-UK_country_population = (57.11, 3.13, 1.91, 5.45)
-China_country_populations = (65.77,41.88,45.28, 61.27,85.15)
+UK_country_population = [57.11, 3.13, 1.91, 5.45]
+China_country_populations = [65.77,41.88,45.28, 61.27,85.15]
 sorted_UK = sorted(UK_country_population)
 sorted_China = sorted(China_country_populations)
 print(sorted_UK)
