@@ -1,3 +1,4 @@
+#plam
 #Define UK regional population data
 #Define population data for some Chinese provinces
 #Sort UK population data
@@ -5,6 +6,7 @@
 #Print sorted data
 #Plot UK regional population pie chart
 #Plot population pie chart of Chinese provinces near the Zhejiang province
+
 UK_country_population = [57.11, 3.13, 1.91, 5.45] # England, Scotland, Wales, Northern Ireland
 China_country_populations = [41.88,45.28, 61.27,85.15] # Fujian, Jiangxi, Anhui, Jiangsu
 sorted_UK = sorted(UK_country_population)  
