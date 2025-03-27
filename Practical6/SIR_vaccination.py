@@ -22,10 +22,10 @@ for rate in vaccination_rates:
  
   #define the time steps
     t_steps=1000
-
+    #When the vaccination rate is 100%, the number of vaccinated people is equal to the total population, so the number of infected people is 0.
+    #but the value of (N-V0) can't be 0, so we need to divide the situation to discuss.
     if rate == 1:
-        # rate= 100% 
-        I = [0] * (t_steps + 1)
+        I = [0] * (t_steps + 1) 
     else:
         for t in range(t_steps):
             # calculate the prabability of infection

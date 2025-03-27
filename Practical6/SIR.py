@@ -1,3 +1,4 @@
+
 # import necessarylibraries
 import numpy as np
 import matplotlib.pyplot as plt
@@ -19,10 +20,10 @@ for t in range(t_steps):
   #Susceptible people become infected
    new_infections=np.random.choice(range(2),S[-1],p=[1-p,p]).sum()
     #Infected people recover
-   new_recoveries=np.random.choice(range(2),I[-1],p=[1-gamma,gamma]).sum()
-   S.append(S[-1]-new_infections)
-   I.append(I[-1]+new_infections-new_recoveries)
-   R.append(R[-1]+new_recoveries)
+   new_recoveries=np.random.choice(range(2),I[-1],p=[1-gamma,gamma]).sum() 
+   S.append(S[-1]-new_infections) #update the number of susceptible people
+   I.append(I[-1]+new_infections-new_recoveries) #update the number of infected people
+   R.append(R[-1]+new_recoveries)#update the number of recovered people
 
 plt.plot(range(t_steps+1),S,label='Susceptible') 
 plt.plot(range(t_steps+1),I,label='Infected')
