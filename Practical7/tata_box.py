@@ -5,7 +5,7 @@ with open ("C:/Users/ASUS/Desktop/第二学期/Saccharomyces_cerevisiae.R64-1-1.
     for line in infile:
         if re.search('^>', line):
             if  current_sequence and re.search(r'TATA[AT]A[AT]',current_sequence):
-                outfile.write(f"{current_gene_name}\n{current_sequence}\n")
+                outfile.write(f">{current_gene_name}\n{current_sequence}\n")
             current_gene_name=re.search(r"gene:.*?\s",line) 
             if current_gene_name:
                     current_gene_name = current_gene_name[0]
