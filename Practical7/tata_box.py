@@ -11,7 +11,7 @@ with open ("C:/Users/ASUS/Desktop/第二学期/Saccharomyces_cerevisiae.R64-1-1.
             
         else:
             current_sequence += line
-    if current_gene_name == "" and re.search('TATA[AT]A[AT]',current_sequence):
+    if re.search('TATA[AT]A[AT]',current_sequence):
        outfile.write(f"{current_gene_name}\n{current_sequence}\n")
 
 print(f"Genes with TATA box written to {outfile}")
