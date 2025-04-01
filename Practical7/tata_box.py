@@ -3,14 +3,18 @@ with open ("C:/Users/ASUS/Desktop/第二学期/Saccharomyces_cerevisiae.R64-1-1.
     current_gene_name = ""
     current_sequence = ""
     for line in infile:
-        if re.search('>', line):
-            if current_sequence and re.search(r'TATA[AT]A[AT]',current_sequence):
-               outfile.write(f"{current_gene_name}\n{current_sequence}\n")
-            current_gene_name=re.search(r"gene:.*?\s",line)
+        if re.search('^>', line):
+            if  current_sequence and re.search(r'TATA[AT]A[AT]',current_sequence):
+                outfile.write(f"{current_gene_name}\n{current_sequence}\n")
+            current_gene_name=re.search(r"gene:.*?\s",line) 
+            if current_gene_name:
+                    current_gene_name = current_gene_name[0]
+                    current_gene_name = re.sub(r'gene:','',current_gene_name)
             current_sequence = ""
             
         else:
             current_sequence += line
+        # check for the last gene in the file
     if re.search('TATA[AT]A[AT]',current_sequence):
        outfile.write(f"{current_gene_name}\n{current_sequence}\n")
 
