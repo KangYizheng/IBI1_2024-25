@@ -15,6 +15,8 @@ with open ("C:/Users/ASUS/Desktop/第二学期/Saccharomyces_cerevisiae.R64-1-1.
                 # Combine the extracted sequences into a single string
                     tim1=''.join(tim1)
                     time=len(re.findall(r'TATA[AT]A[AT]',tim1))
+                    current_sequence=re.findall(fr'{input_donor}.*TATA[AT]A[AT].*{input_receptor}',current_sequence)
+                    current_sequence=''.join(current_sequence)
                     outfile.write(f">{current_gene_name} time={time}\n{current_sequence}\n")
             current_gene_name=re.search(r"gene:.*?\s",line) 
             if current_gene_name:
@@ -33,6 +35,8 @@ with open ("C:/Users/ASUS/Desktop/第二学期/Saccharomyces_cerevisiae.R64-1-1.
             time=len(re.findall(r'TATA[AT]A[AT]',tim1))
                 # Write the gene name and sequence to the output file
             current_gene_name = re.sub(r'gene:','',current_gene_name)
+            current_sequence=re.findall(fr'{input_donor}.*TATA[AT]A[AT].*{input_receptor})',current_sequence)
+            current_sequence=''.join(current_sequence)
                 # Write the gene name, time, and sequence to the output file
             outfile.write(f">{current_gene_name} time={time}\n{current_sequence}\n")
 
