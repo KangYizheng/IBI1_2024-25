@@ -1,7 +1,8 @@
 import re
 input_gene=input("Enter the type of recepter(GTAG,GCAG,ATAC) ")
 output_file=f"{input_gene}_spliced_genes.fa"
-
+if input_gene not in ['GTAG','GCAG','ATAC']:
+    print("Invalid input. Please enter GTAG, GCAG, or ATAC.")
 with open ("C:/Users/ASUS/Desktop/第二学期/Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa",'r') as infile, open (output_file,'w') as outfile:
     current_gene_name = ""
     current_sequence = ""
