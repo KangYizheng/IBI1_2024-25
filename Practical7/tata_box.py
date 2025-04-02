@@ -1,6 +1,6 @@
 import re
-output_file=f"tata_genes.fa"
-with open ("C:/Users/ASUS/Desktop/第二学期/Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa",'r') as infile, open (output_file,'w') as outfile:
+output_file=f"tata_genes.fa" # output file name
+with open ("C:/Users/ASUS/Desktop/第二学期/Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa",'r') as infile, open (output_file,'w') as outfile:# open the input and output files
     current_gene_name = ""
     current_sequence = ""
     for line in infile:
@@ -15,6 +15,7 @@ with open ("C:/Users/ASUS/Desktop/第二学期/Saccharomyces_cerevisiae.R64-1-1.
             
         else:
             current_sequence += line
+            current_sequence = re.sub(r'\n','',current_sequence)
         # check for the last gene in the file
     if re.search('TATA[AT]A[AT]',current_sequence):
        outfile.write(f"{current_gene_name}\n{current_sequence}\n")
