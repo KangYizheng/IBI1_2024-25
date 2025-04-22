@@ -26,4 +26,10 @@ if cut_sites is not None:
         print(f"Cut site: {cut_site}") 
 # example input: sequence = "ACGTACGTACGT" enzyme = "ACGT"
 # example output: Cut site: [0] Cut site: [4] Cut site: [8]
+# example input: sequence = "ACGTACGTACGT" enzyme = "CGT"
+# example output: Cut site: [1] Cut site: [5] Cut site: [9]
+# example input: sequence = "ACTU" enzyme = "TAC"
+# example output: DNA sequence not valid
+# example input: sequence = "ACGTACGTACGT" enzyme = "TUC"
+# example output: Enzyme not valid
 
