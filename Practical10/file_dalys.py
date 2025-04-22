@@ -2,7 +2,7 @@ import os
 import pandas as pd 
 import matplotlib.pyplot as plt
 import numpy as np
-os.chdir(r"C:\Users\ASUS\Desktop\第二学期")
+os.chdir(r"C:\Users\ASUS\Desktop\第二学期\IBI1_2024-25\Practiical10")
 # Read the CSV file into a DataFrame.
 dalys_data = pd.read_csv("dalys-rate-from-all-causes.csv")
 # read just the “Year” column.
@@ -33,4 +33,4 @@ plt.show()
 a= dalys_data.loc[:,"DALYs"]
 b=a>=650000
 results = dalys_data.loc[b,"Entity"]
-print(results)
+print(f"Countries with DALYs rates greater than or equal to 650000: {results}")
