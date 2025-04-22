@@ -5,13 +5,18 @@ import numpy as np
 os.chdir(r"C:\Users\ASUS\Desktop\第二学期\IBI1_2024-25\Practical10")
 # Read the CSV file into a DataFrame.
 dalys_data = pd.read_csv("dalys-rate-from-all-causes.csv")
+lines_10= dalys_data.loc[:10,"Year"]# read the first 10 lines of the DataFrame.
+# Display the first 10 lines of the DataFrame.
+print(lines_10)
+# the 10th year of DALYs data is 82453.65.
+
 # read just the “Year” column.
 Year_column=dalys_data.loc[:,"Year"]
 # create a Boolean that is True when the “Year” is “1990”.
 a=Year_column==1990
 #find exactly the rows i need.
-results = dalys_data.loc[a,"DALYs"]
-print(results)
+results_1 = dalys_data.loc[a,"DALYs"]# get the unique values of the DALYs column.
+print(results_1)
 
 uk = dalys_data.loc[dalys_data.Entity=="United Kingdom", ["DALYs", "Year"]]
 france = dalys_data.loc[dalys_data.Entity=="France", ["DALYs", "Year"]]
@@ -31,10 +36,11 @@ plt.xticks(uk.Year,rotation=-90)
 plt.show()
 # The answer to other question 
 # read the “DALYs” column.
-dalys_column= dalys_data.loc[:,"DALYs"]
+dalys_column= dalys_data["DALYs"]
 # create a Boolean that is True when the “DALYs” is greater than or equal to 650000.
 b=dalys_column>=650000
 # find the rows that are True.
-results = dalys_data.loc[b,"Entity"]
+results_2 = dalys_data.loc[b,["Entity"]]
+final_results = results_2["Entity"].unique() # get the unique values of the countries.
 # Display the countries with DALYs rates greater than or equal to 650000.
-print(f"Countries with DALYs rates greater than or equal to 650000: {results}")
+print(f'Countries with DALYs rates greater than or equal to 650000:{final_results}')
