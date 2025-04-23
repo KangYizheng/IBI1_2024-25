@@ -28,12 +28,22 @@ print(f"UK mean DALYs rate: {uk_mean}")
 print(f"France mean DALYs rate: {france_mean}")
 if uk_mean > france_mean:# compare the mean DALYs rate of UK and France.
     print("UK has a higher mean DALYs rate than France.")
-else:
+elif uk_mean < france_mean:
     print("France has a higher mean DALYs rate than UK.")
+else:
+    print("UK and France have the same mean DALYs rate.")
+# UK has a higher mean DALYs rate than France.
 # Plotting the DALYs rates for the UK    
 plt.plot(uk.Year, uk.DALYs, 'b+')
 plt.xticks(uk.Year,rotation=-90)
+plt.xlabel("Year")
+plt.ylabel("DALYs")
+plt.title("DALYs in the UK")
 plt.show()
+
+
+
+
 # The answer to other question 
 # read the “DALYs” column.
 dalys_column= dalys_data["DALYs"]
@@ -43,4 +53,5 @@ b=dalys_column>=650000
 results_2 = dalys_data.loc[b,["Entity"]]
 final_results = results_2["Entity"].unique() # get the unique values of the countries.
 # Display the countries with DALYs rates greater than or equal to 650000.
+#Only Rwanda has a DALYs rate greater than or equal to 650000.
 print(f'Countries with DALYs rates greater than or equal to 650000:{final_results}')

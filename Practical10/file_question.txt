@@ -1,1 +1,12 @@
+Question:
 What country or countries have recorded a DALYs greater than 650,000 in a single year?
+
+Row:
+from 47 to 57 rows
+
+Discussion:
+Rwanda may be facing a higher prevalence of multiple serious diseases. 
+For example, AIDS, malaria, tuberculosis, etc., which can be severe in Rwanda, cause substantial 
+life years lost and disability, thereby driving up DALYs rates. In contrast, other countries may 
+have been more successful in preventing and controlling diseases with lower morbidity and 
+mortality rates, so DALYs rates have not reached the levels seen in Rwanda.
