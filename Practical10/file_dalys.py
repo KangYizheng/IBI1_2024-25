@@ -35,7 +35,7 @@ else:
 # UK has a higher mean DALYs rate than France.
 # Plotting the DALYs rates for the UK    
 plt.plot(uk.Year, uk.DALYs, 'b+')
-plt.xticks(uk.Year,rotation=-90)
+plt.xticks(uk.Year, rotation=-90)
 plt.xlabel("Year")
 plt.ylabel("DALYs")
 plt.title("DALYs in the UK")
