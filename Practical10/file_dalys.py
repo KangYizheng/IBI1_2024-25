@@ -5,10 +5,10 @@ import numpy as np
 os.chdir(r"C:\Users\ASUS\Desktop\第二学期\IBI1_2024-25\Practical10")
 # Read the CSV file into a DataFrame.
 dalys_data = pd.read_csv("dalys-rate-from-all-causes.csv")
-lines_10= dalys_data.loc[:10,"Year"]# read the first 10 lines of the DataFrame.
+lines_10= dalys_data.loc[0:9,"Year"]# read the first 10 lines of the DataFrame.
 # Display the first 10 lines of the DataFrame.
 print(lines_10)
-# the 10th year of DALYs data is 82453.65.
+# the 10th year of DALYs data is 82624.94.
 
 # read just the “Year” column.
 Year_column=dalys_data.loc[:,"Year"]
