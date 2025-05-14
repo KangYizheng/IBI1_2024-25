@@ -1,0 +1,12 @@
+Task 1
+length of SOD2=222
+Subcellular localisation: Mitochondrion
+Task2 
+ 58.1%-100%
+Task 3
+Compare human to mouse: Similarity=90.09% scores=1097
+Compare human to random: Similarity= 4.95% scores=-235
+Compare mouse to random: Similarity=4.50% scores= -243
+Task 4
+human and mouse	sequences	are	most	closely	related	
+reason: the biggest scores and Similarity
