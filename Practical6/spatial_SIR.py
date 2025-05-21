@@ -26,8 +26,8 @@ for t in range(num_time_points):
     # make sure recovering the infected individuals and recover individuals with probability gamma
     recovered_points = np.where((population == 1) & (np.random.random(population.shape) < gamma))
     population[recovered_points] = 2
-
-    plt.figure(figsize=(6, 4), dpi=150)
-    plt.imshow(population, cmap='viridis', interpolation='nearest')
-    plt.title(f"Time point {t}")
-    plt.show()
+    if t in [0,24,49,99]:
+        plt.figure(figsize=(6, 4), dpi=150)
+        plt.imshow(population, cmap='viridis', interpolation='nearest')
+        plt.title(f"Time point {t}")
+        plt.show()
