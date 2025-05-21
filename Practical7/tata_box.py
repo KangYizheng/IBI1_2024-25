@@ -1,6 +1,6 @@
 import re
 output_file=f"tata_genes.fa" # output file name
-with open ("C:/Users/ASUS/Desktop/第二学期/Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa",'r') as infile, open (output_file,'w') as outfile:# open the input and output files
+with open ("C:/Users/ASUS/Desktop/大一下学期/IBI1_2024-25/Practical7/Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa",'r') as infile, open (output_file,'w') as outfile:# open the input and output files
     current_gene_name = ""
     current_sequence = ""
     for line in infile:# read the input file line by line
