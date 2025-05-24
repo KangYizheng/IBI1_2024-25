@@ -6,7 +6,7 @@ def find_the_restriction_enzyme_cut_sites(sequence, enzyme):# function to find t
                 total_cut_sites = []# list to store the cut sites
                 for i in range(len(sequence)-len(enzyme)+1):# iterate through the sequence to find the enzyme
                     if sequence[i:i+len(enzyme)] == enzyme:
-                        cut_sites = [i]
+                        cut_sites = [i+1]# store the cut site
                         total_cut_sites.append(cut_sites)
                 return total_cut_sites
             else:
@@ -18,8 +18,8 @@ def find_the_restriction_enzyme_cut_sites(sequence, enzyme):# function to find t
     else:
         print("DNA sequence not valid")
         return None 
-sequence=input("Enter the sequence: ")
-enzyme=input("Enter the enzyme: ")
+sequence=input("Enter the sequence: ").upper()# input the DNA sequence
+enzyme=input("Enter the enzyme: ").upper()# input the restriction enzyme
 cut_sites = find_the_restriction_enzyme_cut_sites(sequence, enzyme)
 if cut_sites is not None:
     for cut_site in cut_sites:
