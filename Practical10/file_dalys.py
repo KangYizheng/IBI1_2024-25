@@ -2,7 +2,7 @@ import os
 import pandas as pd 
 import matplotlib.pyplot as plt
 import numpy as np
-os.chdir(r"C:\Users\ASUS\Desktop\第二学期\IBI1_2024-25\Practical10")
+os.chdir(r"C:/Users/ASUS/Desktop/大一下学期/IBI1_2024-25/Practical10")
 # Read the CSV file into a DataFrame.
 dalys_data = pd.read_csv("dalys-rate-from-all-causes.csv")
 lines_10= dalys_data.loc[0:9,"Year"]# read the first 10 lines of the DataFrame.
