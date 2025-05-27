@@ -1,11 +1,11 @@
 from xml.dom.minidom import parse
 import xml.dom.minidom
 import time
-    
+#DOM
 #record time    
 start_time = time.time()
-DOMTree = xml.dom.minidom.parse(r"C:\Users\ASUS\Desktop\大一下学期\IBI1_2024-25\Practical14\go_obo.xml")# prase file
-collection = DOMTree.documentElement #collect the document element
+DOMTree = xml.dom.minidom.parse(r"C:\Users\ASUS\Desktop\大一下学期\IBI1_2024-25\Practical14\go_obo.xml") # prase file
+collection = DOMTree.documentElement # collect the document element
 terms = collection.getElementsByTagName("term") # get the tag is term
 # set the max dictionary
 ontology_max1 = {
@@ -28,8 +28,8 @@ for term in terms:
     if namespace in ontology_max1: 
         if count > max_count1[namespace]: # check if the count is greater than the max_count
             ontology_max1[namespace] = [(go_id, name, count)]
-            max_count1[namespace] = count
-        elif count == max_count1[namespace]:# store the same count
+            max_count1[namespace] = count # update the max_count1 dictionary
+        elif count == max_count1[namespace]: # store the same count
             ontology_max1[namespace].append((go_id, name, count))
 print("Results from DOM parser:")
 for ns, terms in ontology_max1.items():
@@ -44,18 +44,18 @@ for ns, terms in ontology_max1.items():
 
 
 end_time = time.time()
-dom_time = end_time - start_time
+dom_time = end_time - start_time # calculate the time taken
 print(f"Time taken to parse XML using DOM: {dom_time:.2f} seconds")
 
 #SAX
 import xml.sax 
-class GOHandler(xml.sax.ContentHandler):# create a class to handle the SAX parsing
-    def __init__(self):# initialize the class
-        self.current_element = "" #set the current element to empty
-        self.go_id = "" #set the go_id to empty
-        self.name = "" #set the name to empty
-        self.namespace = ""# set the namespace to empty
-        self.is_a_count = 0# set the is_a_count to 0
+class GOHandler(xml.sax.ContentHandler): # create a class to handle the SAX parsing
+    def __init__(self): # initialize the class
+        self.current_element = "" # set the current element to empty
+        self.go_id = "" # set the go_id to empty
+        self.name = "" # set the name to empty
+        self.namespace = "" # set the namespace to empty
+        self.is_a_count = 0 # set the is_a_count to 0
         # set the max_counts dictionary to store the results for each namespace
         self.max_counts = {
         "molecular_function": [],
@@ -73,13 +73,14 @@ class GOHandler(xml.sax.ContentHandler):# create a class to handle the SAX parsi
         self.temp_name = ""
         self.temp_namespace = ""
         self.temp_id = ""
+        # set the in_term and in_name to False
         self.in_term = False
         self.in_name = False
 
     def startElement(self, tag, attribute):# set the start element
         self.current_element = tag# set the current element to the tag
         if tag == "term":
-            self.in_term = True# set the in_term to True
+            self.in_term = True # let the parser know we are in a term element
             self.go_id = "" # set the go_id to empty
             self.name = "" # set the name to empty
             self.namespace = "" # set the namespace to empty
@@ -88,7 +89,7 @@ class GOHandler(xml.sax.ContentHandler):# create a class to handle the SAX parsi
             self.temp_name = "" # set the temp_name to empty
             self.temp_id = "" # set the temp_id to empty
         if tag == "name":
-            self.in_name = True # set the in_name to True
+            self.in_name = True # let the parser know we are in a name element
         elif self.current_element == "is_a": # check the if the current element is is_a
             self.is_a_count += 1
     def characters(self, content):
@@ -103,20 +104,21 @@ class GOHandler(xml.sax.ContentHandler):# create a class to handle the SAX parsi
 
     def endElement(self, tag):
         if tag == "namespace":
-            self.namespace = self.temp_namespace.strip()# set the namespace to temp_namespace
+            self.namespace = self.temp_namespace.strip() # set the namespace to temp_namespace
         
         elif tag == "id":
-            self.go_id = self.temp_id.strip()# set the go_id to temp_id
+            self.go_id = self.temp_id.strip() # set the go_id to temp_id
         elif tag == "name":
-            self.name = self.temp_name.strip()# set the name to temp_name
-            self.in_name = False
-        elif tag == "term":# update the max_counts dictionary
+            self.name = self.temp_name.strip() # set the name to temp_name
+            self.in_name = False # let the parser know we are not in a name element anymore
+        elif tag == "term": # update the max_counts dictionary
             if self.namespace in self.max_counts:
-                if self.is_a_count > self.max_values[self.namespace]:# check if the is_a_count is greater than the max_values
+                if self.is_a_count > self.max_values[self.namespace]: # check if the is_a_count is greater than the max_values
                     self.max_counts[self.namespace] = [(self.go_id, self.name, self.is_a_count)]
                     self.max_values[self.namespace] = self.is_a_count
-                elif self.is_a_count == self.max_values[self.namespace]:# check if the is_a_count is equal to the max_values
+                elif self.is_a_count == self.max_values[self.namespace]: # check if the is_a_count is equal to the max_values
                     self.max_counts[self.namespace].append((self.go_id, self.name, self.is_a_count))
+            self.in_term = False # let the parser know we are not in a term element anymore
 
 
 # record start time

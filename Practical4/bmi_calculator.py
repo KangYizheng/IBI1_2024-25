@@ -1,7 +1,7 @@
 #input the weight and height of a person and calculates the BMI of the person
 #calculate the BMI of a person
-#print out the BMI of the person
 #determine if the person is underweight, normal weight or obese
+#print out the BMI of the person and the weight category
 
 
 Weight=float(input("the weight of person the weight is in kg")) 

@@ -22,10 +22,10 @@ for t in range(num_time_points):
                 if (x,y) != (i,j) and population[x, y] == 0:
                         # infect the individual
                         population[x, y] = np.random.choice(range(2),1, p=[1-beta, beta])
-    # infected individuals recover
     # make sure recovering the infected individuals and recover individuals with probability gamma
     recovered_points = np.where((population == 1) & (np.random.random(population.shape) < gamma))
-    population[recovered_points] = 2
+    # infected individuals recover
+    population[recovered_points] = 2 
     plt.figure(figsize=(6, 4), dpi=150)
     plt.imshow(population, cmap='viridis', interpolation='nearest')
     plt.title(f"Time point {t+1}")

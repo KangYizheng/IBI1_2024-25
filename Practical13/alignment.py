@@ -4,16 +4,16 @@ human=r"C:/Users/ASUS/Desktop/大一下学期/IBI1_2024-25/Practical13/human.fas
 mouse=r"C:/Users/ASUS/Desktop/大一下学期/IBI1_2024-25/Practical13/mouse.fasta"
 random=r"C:/Users/ASUS/Desktop/大一下学期/IBI1_2024-25/Practical13/Random.fasta"
 blosum62=r"C:/Users/ASUS/Desktop/大一下学期/IBI1_2024-25/Practical13/BLOSUM62.txt"
-def read_file(file_path):# get the sequence from the file
-    sequence = "" #initialize an empty string
-    with open(file_path,"r")as file: #open the file
+def read_file(file_path): # get the sequence from the file
+    sequence = "" # initialize an empty string
+    with open(file_path,"r")as file: # open the file
         for line in file:
             if not re.search(r"^>", line):
-                sequence += line.strip() #Get the sequence line and remove the newline character
+                sequence += line.strip() # Get the sequence line and remove the newline character
     return sequence
-def load_blosum62(filepath): #load the BLOSUM62 matrix from the file
+def load_blosum62(filepath): # load the BLOSUM62 matrix from the file
     with open(filepath, 'r') as file:
-        matrix = {} #initialize an empty dictionary
+        matrix = {} # initialize an empty dictionary
         # remove empty lines and comments
         lines = [line.strip() for line in file if line.strip() and not line.startswith('#')]
         header = lines[0].split() # get the header
@@ -27,15 +27,15 @@ def load_blosum62(filepath): #load the BLOSUM62 matrix from the file
                 matrix[(row_aa, col_aa)] = score
     return matrix
      
-def similiarity(seq1, seq2): #calculate the similarity between two sequences
-    if len(seq1) != len(seq2):# check if the two sequences are of the same length
+def similiarity(seq1, seq2): # calculate the similarity between two sequences
+    if len(seq1) != len(seq2): # check if the two sequences are of the same length
         raise ValueError("Sequences must be of the same length")
-    similiarity_count = 0 #initialize the similarity count
-    scores = 0 #initialize the score
+    similiarity_count = 0 # initialize the similarity count
+    scores = 0 # initialize the score
     for i in range(len(seq1)):
         scores += matrix[(seq1[i], seq2[i])] # sum the score of the two sequences
         if seq1[i] == seq2[i]:
-            similiarity_count += 1 #sum the number of identical amino acids
+            similiarity_count += 1 # sum the number of identical amino acids
     # calculate the similarity
     similiarity = similiarity_count / len(seq1)
     print(f"Similarity: {similiarity*100:.2f}%")

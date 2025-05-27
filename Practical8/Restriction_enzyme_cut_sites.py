@@ -1,12 +1,12 @@
 import re
-def find_the_restriction_enzyme_cut_sites(sequence, enzyme):# function to find the restriction enzyme cut sites in a DNA sequence
-    if not re.search(r'[^ACGT]+',sequence):# check if the sequence is a valid DNA sequence
-        if not re.search(r'[^ACGT]+', enzyme):# check if the enzyme is a valid restriction enzyme
-            if re.search(enzyme, sequence):# check if the enzyme is present in the sequence
-                total_cut_sites = []# list to store the cut sites
-                for i in range(len(sequence)-len(enzyme)+1):# iterate through the sequence to find the enzyme
+def find_the_restriction_enzyme_cut_sites(sequence, enzyme): # function to find the restriction enzyme cut sites in a DNA sequence
+    if not re.search(r'[^ACGT]+',sequence): # check if the sequence is a valid DNA sequence
+        if not re.search(r'[^ACGT]+', enzyme): # check if the enzyme is a valid restriction enzyme
+            if re.search(enzyme, sequence): # check if the enzyme is present in the sequence
+                total_cut_sites = [] # list to store the cut sites
+                for i in range(len(sequence)-len(enzyme)+1): # iterate through the sequence to find the enzyme
                     if sequence[i:i+len(enzyme)] == enzyme:
-                        cut_sites = [i+1]# store the cut site
+                        cut_sites = [i+1] # store the cut site
                         total_cut_sites.append(cut_sites)
                 return total_cut_sites
             else:

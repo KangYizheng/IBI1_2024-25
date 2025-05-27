@@ -1,10 +1,10 @@
-name=input("Enter the name of the patient: ")# patient name
-age=int(input("Enter the age of the patient: "))# patient age
-date_of_latest_admission=input("Enter the date of latest admission of the patient: ")# date of latest admission
+name=input("Enter the name of the patient: ") # patient name
+age=int(input("Enter the age of the patient: ")) # patient age
+date_of_latest_admission=input("Enter the date of latest admission of the patient: ") # date of latest admission
 medical_history=input("Enter the medical history of the patient: ") # medical history
 # patient record management system
 class patients:
-       def __init__ (self,name,age,date_of_latest_admission,medical_history):
+       def __init__ (self,name,age,date_of_latest_admission,medical_history): # constructor to initialize patient details
         self.name=name
         self.age=age
         self.date_of_latest_admission=date_of_latest_admission
@@ -14,5 +14,5 @@ class patients:
          
 patient=patients(name,age,date_of_latest_admission,medical_history)
 patient.print_details_of()
-#example input: name=John, age=30, date_of_latest_admission=2023-10-01, medical_history=Diabetes
-#example output: Patient Name: John, Age: 30, Date of Latest Admission: 2023-10-01, Medical History: Diabetes
+# example input: name=John, age=30, date_of_latest_admission=2023-10-01, medical_history=Diabetes
+# example output: Patient Name: John, Age: 30, Date of Latest Admission: 2023-10-01, Medical History: Diabetes

@@ -28,17 +28,17 @@ for rate in vaccination_rates:
         I = [0] * (t_steps + 1) 
     else:
         for t in range(t_steps):
-            # calculate the prabability of infection
+            # calculate the probability of infection
             p = beta * (I[-1] / (N - V0))
             # infection
-            new_infections = np.random.choice(range(2), S[-1], p=[1 - p, p]).sum()
+            new_infections = np.random.choice(range(2), S[-1], p=[1-p, p]).sum()
             # recovery
-            new_recoveries = np.random.choice(range(2), I[-1], p=[1 - gamma, gamma]).sum()
-            S.append(S[-1] - new_infections)
-            I.append(I[-1] + new_infections - new_recoveries)
-            R.append(R[-1] + new_recoveries)
+            new_recoveries = np.random.choice(range(2), I[-1], p=[1-gamma, gamma]).sum()
+            S.append(S[-1] - new_infections)# Update the number of susceptible people
+            I.append(I[-1] + new_infections - new_recoveries) # Update the number of infected people
+            R.append(R[-1] + new_recoveries)# Update the number of recovered people
             V.append(V0)
-    plt.plot(range(t_steps + 1), I, label=f'{rate*100}%')
+    plt.plot(range(t_steps+1), I, label=f'{rate*100}%')# Plot the number of infected people for each vaccination rate
 
 plt.xlabel('Time')
 plt.ylabel('Number of people')
