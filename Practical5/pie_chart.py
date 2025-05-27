@@ -1,4 +1,4 @@
-#plam
+#plan
 #Define UK regional population data
 #Define population data for some Chinese provinces
 #Sort UK population data
