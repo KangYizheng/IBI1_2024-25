@@ -1,4 +1,5 @@
-from xml.dom.minidom import parse
+
+import xml.sax 
 import xml.dom.minidom
 import time
 #DOM
@@ -48,7 +49,6 @@ dom_time = end_time - start_time # calculate the time taken
 print(f"Time taken to parse XML using DOM: {dom_time:.2f} seconds")
 
 #SAX
-import xml.sax 
 class GOHandler(xml.sax.ContentHandler): # create a class to handle the SAX parsing
     def __init__(self): # initialize the class
         self.current_element = "" # set the current element to empty
