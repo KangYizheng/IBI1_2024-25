@@ -2,6 +2,7 @@
 import xml.sax 
 import xml.dom.minidom
 import time
+import xml.sax.handler
 #DOM
 #record time    
 start_time = time.time()
