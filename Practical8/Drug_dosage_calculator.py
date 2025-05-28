@@ -16,6 +16,8 @@ strength=int(input("Enter the strength of the drug in mg/ml: "))
 volume=calculate_dosage(weight,strength)
 if volume :
     print(f"The required volume of the drug is {volume} ml")
+else:
+    print("Invalid input, please check the weight and strength values.")
 # example input: weight=70, strength=120
 # example output: The required volume of the drug is 43.75 ml
 

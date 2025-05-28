@@ -17,9 +17,9 @@ plt.ylabel('Percentage of Users')
 plt.title('Popularity of Top 5 Programming Languages')
 plt.show()
 
-language="JavaScript" #language to be searched
+language=input("input the language") #using JavaScript as the input language 
 # 2. Check if the language "JavaScript" is present in the dictionary. If it is present, print the percentage of users who use JavaScript.
 if language in language_data:
-    print(f"the percentage of {language} is {language_data[language]}")
+    print(f"the percentage of {language} is {language_data[language]}%") #62.3% for JavaScript
 else:
     print(f"{language} is not present in the dictionary")
