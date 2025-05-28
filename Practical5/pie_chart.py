@@ -10,9 +10,9 @@
 UK_country_population = [57.11, 3.13, 1.91, 5.45] # England, Scotland, Wales, Northern Ireland
 China_country_populations = [41.88,45.28, 61.27,85.15] # Fujian, Jiangxi, Anhui, Jiangsu
 sorted_UK = sorted(UK_country_population)  
-sorted_China = sorted(China_country_populations)
+sorted_China_provinces_near_zhejiang = sorted(China_country_populations)
 print(sorted_UK) 
-print(sorted_China) 
+print(sorted_China_provinces_near_zhejiang) 
 #plotting the UK regional population pie chart
 import matplotlib.pyplot as plt 
 labels = "England", "Scotland", "Wales", "Northern Ireland" # Define the labels for each region
