@@ -1,0 +1,1 @@
+i forget to give the formative code. But i compare my code with other code and their mistake. i add some pseudocodes to make the code clear. 
